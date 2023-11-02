@@ -1,0 +1,84 @@
+.post-comments {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-comments h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.post-comments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.post-comments li {
+  margin-bottom: 8px;
+}
+
+.post-comments p {
+  font-style: italic;
+
+}
+
+.post-comments li {
+  background-color: #121212;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.post-comments #profile {
+  font-size: 40px;
+
+}
+
+.flex0 {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  gap: 10px;
+}
+
+.star {
+  font-size: 16px;
+}
+
+.select {
+  padding: 0.2rem 0.8rem;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  margin-top: 7px;
+  width: 80%;
+  border: none;
+  outline: none;
+}
+
+textarea{
+  outline: none;
+  font-size: 15px;
+}
+.post-comments button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: black;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #F7D354;
+  cursor: pointer;
+  transition: 0.8s;
+  
+}
+
+.post-comments button:hover{
+ 
+  background-color: transparent;
+  color:#F7D354;
+  border: 1px solid #F7D354;
+
+}

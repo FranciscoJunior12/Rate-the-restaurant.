@@ -1,0 +1,44 @@
+.side-bar {
+    position: fixed;
+    height: 90vh;
+    border: 1px solid #F7D354;
+    border-radius: 5px;
+    padding: 20px 10px 10px 10px;
+    background-color: #121212;
+    ;
+}
+
+.side-bar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.side-bar ul li {
+    display: flex;
+    align-items: center;
+    background-color: #F7D354;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.side-bar ul li:hover {
+    background-color: transparent;
+    border: 1px solid #F7D354;
+    color: #F7D354;
+}
+
+.side-bar span {
+    color: black;
+    font-size: 20px;
+}
+
+.side-bar span:hover {
+    color: #F7D354;
+}
