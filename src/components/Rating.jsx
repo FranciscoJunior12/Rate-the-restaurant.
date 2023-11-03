@@ -6,10 +6,10 @@ import { DataContext } from '../context/GlobalData';
 
 const Rating = ({ idRestaurant }) => {
 
-    const [comment, setComment] = useState('');
+    const { comment, setComment } = useContext(DataContext);
     const [rate, setRate] = useState();
 
-    const { setState } = useContext(DataContext)
+    const { update, setUpdate, idRating } = useContext(DataContext)
 
     const handleSubmit = async () => {
 
@@ -86,10 +86,54 @@ const Rating = ({ idRestaurant }) => {
 
 
     }
+
+
+    const handleUpdate = async () => {
+        if (!comment || !rate) return;
+
+        // const currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
+
+
+        const url = `http://localhost:3000/ratings/${idRating}`;
+        const dados = {
+            coments: comment,
+            rating: rate
+
+        };
+
+        try {
+            const response = await fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+
+                },
+                body: JSON.stringify(dados),
+            });
+
+            if (response.status === 200) {
+                setUpdate(false)
+                return window.location.reload()
+            }
+
+
+
+        } catch (error) {
+            console.error('Erro na requisição:', error);
+        }
+
+
+
+
+    }
+
+
     return (
         <div className="post-comments">
             <h2><span> Deixe o seu Comentário e Avaliação</span></h2>
-            <textarea name="comment" id="coment" cols="65" rows="6" onChange={(e) => {
+            <textarea name="comment" id="coment" cols="65" rows="6" value={comment} onChange={(e) => {
+
                 setComment(e.target.value)
             }}></textarea>
             <select className='select'
@@ -103,9 +147,21 @@ const Rating = ({ idRestaurant }) => {
                 <option value="5">5 Estrelas</option>
             </select>
 
-            <button onClick={handleSubmit}>submit</button>
+            <button onClick={() => {
 
-        </div>
+                if (!update) {
+                    console.log('entre no submit')
+                    handleSubmit()
+                } else {
+                    console.log('entre no update')
+                    handleUpdate()
+                }
+
+
+
+            }}>submit</button>
+
+        </div >
     )
 }
 

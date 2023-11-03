@@ -14,6 +14,9 @@ const Details = () => {
     const [restaurant, setRestaurant] = useState(null);
 
 
+
+
+
     const getRestaurant = async () => {
 
         const url = `http://localhost:3000/restaurants/${id}`
