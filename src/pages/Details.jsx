@@ -8,6 +8,7 @@ import "../components/styles/Details.css"
 import NavBar from '../components/NavBar';
 import Comments from '../components/Comments';
 import Rating from '../components/Rating';
+import Menu from '../components/menu';
 const Details = () => {
 
     const { id } = useParams();
@@ -74,6 +75,7 @@ const Details = () => {
                 )}
 
                 <Comments idRestaurant={id} />
+                <Menu idRestaurant={id} />
                 <Rating idRestaurant={id} />
             </div>
 
