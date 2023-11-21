@@ -18,7 +18,7 @@ const SingleComment = ({ rating }) => {
     const handleUpdate = () => {
         setUpdate(true)
         setIdRating(rating.id)
-        setComment(rating.coments)
+        setComment(rating.coments) 
 
 
     }

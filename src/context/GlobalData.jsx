@@ -17,6 +17,8 @@ export const DataProvider = ({ children }) => {
     const [update, setUpdate] = useState(false);
     const [idRating, setIdRating] = useState(false);
 
+    
+
 
     return (
         <DataContext.Provider value={{ data, setData, filter, setFilter, comment, setComment, update, setUpdate, idRating, setIdRating }}>

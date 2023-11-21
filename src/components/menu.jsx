@@ -3,68 +3,60 @@ import React, { useContext, useEffect, useState } from 'react'
 import './styles/coments.css'
 
 import SingleComment from './singleComment';
+import { RiDeleteBin6Line } from 'react-icons/ri';
+import { RxUpdate } from 'react-icons/rx';
+import { FaStar } from 'react-icons/fa';
+import { BsPersonCircle } from 'react-icons/bs';
+import Item from './Item';
 
 
 const Menu = ({ idRestaurant }) => {
 
 
-    const [menus, setMenus] = useState([]);
-    const [pratos, setPratos] = useState([]);
-
-    const getRatings = async (url) => {
-
-        const res = await fetch(url);
-        const data = await res.json();
+    const [menuItems, setMenuItems] = useState([]);
 
 
-        setMenus(data);
-
-    }
-
-
-    useEffect(() => {
-
-        const url = `http://localhost:3000/menus/`;
-        getRatings(url);
-
-    }, []);
-
-    const getPratos = async (url) => {
+    const getMenuItems = async (url) => {
 
         const res = await fetch(url);
         const data = await res.json();
 
 
-        setPratos(data);
+        setMenuItems(data);
+        // console.log(menuItems)
 
     }
+
+  
+
 
 
     useEffect(() => {
 
-        const url = `http://localhost:3000/menus/`;
-        const url2 = `http://localhost:3000/pratos`;
-        getRatings(url);
-        getPratos(url2);
+        const url = `http://localhost:3000/items`;
+
+        getMenuItems(url);
+
 
     }, []);
-
-
-
-
 
 
     return (
 
         <div className="post-comments">
             <h2><span>Nosso Menu</span></h2>
-            {ratings.length > 0 ? (
+            {menuItems.length > 0 ? (
                 <ul>
-                    {ratings
-                        .filter((rating) => rating.idRestaurant == idRestaurant)
-                        .map((filteredRating) => (
-                            <SingleComment key={filteredRating.id} rating={filteredRating} />
-                        ))}
+
+                    {menuItems
+                        .filter((item) => item.idRestaurante == idRestaurant)
+                        .map((filteredItem) => (
+                            <Item filteredItem={filteredItem} />
+                        ))
+
+
+                    }
+
                 </ul>
             ) : (
                 <p>Nenhum comentário disponível.</p>

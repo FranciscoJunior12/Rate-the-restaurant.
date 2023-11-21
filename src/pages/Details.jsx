@@ -74,8 +74,8 @@ const Details = () => {
 
                 )}
 
-                <Comments idRestaurant={id} />
                 <Menu idRestaurant={id} />
+                <Comments idRestaurant={id} />
                 <Rating idRestaurant={id} />
             </div>
 
