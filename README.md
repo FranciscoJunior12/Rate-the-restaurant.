@@ -21,6 +21,16 @@ Rate-the-restaurant foi desenvolvido com as seguintes tecnologias:
 
 - **Banco de Dados:** **MySql**  para armazenar informações sobre restaurantes, avaliações e informações de usuários.
 
+
+ ## Screenshorts do Layout da Aplicação
+ 
+ ![LoginPage](./design/Login.png)
+       ![LoginPage](./design/8.png)
+
+ ![LoginPage](./design/1.png)
+   ![LoginPage](./design/4.png)
+ ![LoginPage](./design/2.png)
+
 ## Instalação
 
 Para executar o Rate-the-restaurant em seu ambiente local, siga estas etapas:
